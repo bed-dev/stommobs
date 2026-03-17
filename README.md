@@ -191,28 +191,3 @@ MobSpawnEggs.giveAll(player, spawner, level = 1)
 MobSpawnEggs.trySpawnFromEgg(itemStack, player, instance, spawner)
 ```
 
-## Local Testing Before Publishing
-
-Run a local Minestom server with sample mobs:
-
-```powershell
-.\gradlew.bat runLocalServer
-```
-
-Optional quick smoke run (auto-exits after 10 seconds):
-
-```powershell
-.\gradlew.bat runLocalServer --args="--port=25570 --auto-exit-seconds=10"
-```
-
-Local test commands:
-
-- `/creative` or `/gmc`
-- `/survival` or `/gms`
-- `/eggs` or `/mobeggs`
-- `/followentity` or `/fe` (nearest entity, or pass a UUID)
-- `/gotoblock <x> <y> <z>` or `/goblock <x> <y> <z>`
-- `/pathdebug`
-- `/laddertrace` or `/lt`
-- `/mobreset`
-
