@@ -26,9 +26,9 @@ kotlin {
 }
 
 mavenPublishing {
-    coordinates(project.group.toString(), "mobs", project.version.toString())
+    coordinates(project.group.toString(), "mob", project.version.toString())
     pom {
-        name.set("mobs")
+        name.set("mob")
         description.set(project.description)
         inceptionYear.set("2026")
         url.set("https://github.com/bed-dev/stommobs")
@@ -52,6 +52,7 @@ mavenPublishing {
         }
     }
     publishToMavenCentral(com.vanniktech.maven.publish.SonatypeHost.CENTRAL_PORTAL, automaticRelease = true)
+
     signAllPublications()
 }
 
