@@ -1,5 +1,7 @@
 # stommobs
 
+**Requires Java 17+**
+
 `stommobs` is a focused Minestom library for **mob spawning** and **AI management**.
 It gives you:
 
@@ -190,4 +192,3 @@ MobSpawnEggs.giveAll(player, spawner, level = 1)
 ```kotlin
 MobSpawnEggs.trySpawnFromEgg(itemStack, player, instance, spawner)
 ```
-

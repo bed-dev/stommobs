@@ -16,23 +16,18 @@ repositories {
 }
 
 dependencies {
-    api("net.minestom:minestom-snapshots:39d445482f")
+    api("net.minestom:minestom:2026.03.25-1.21.11")
     implementation(kotlin("stdlib"))
     runtimeOnly("ch.qos.logback:logback-classic:1.5.6")
 }
 
-java {
-    withSourcesJar()
-    withJavadocJar()
-}
-
 tasks.withType<JavaCompile> {
-    options.release.set(21)
+    options.release.set(25)
 }
 
 tasks.withType<KotlinCompile> {
     compilerOptions {
-        jvmTarget.set(JvmTarget.JVM_21)
+        jvmTarget.set(JvmTarget.JVM_25)
         freeCompilerArgs.add("-Xjsr305=strict")
     }
 }
@@ -48,9 +43,10 @@ tasks.jar {
     }
 }
 
-tasks.register<JavaExec>("runLocalServer") {
+
+tasks.register<JavaExec>("runTestServer") {
     group = "application"
-    description = "Runs a local Minestom server with stommobs sample mobs"
+    description = "Runs the stommobs local test server for development"
     classpath = sourceSets.main.get().runtimeClasspath
     mainClass.set("codes.bed.minestom.mobs.testing.LocalTestServerKt")
 }
@@ -86,3 +82,8 @@ publishing {
         }
     }
 }
+
+kotlin {
+    jvmToolchain(25)
+}
+
